@@ -13,6 +13,7 @@ const state = {
 const listEl = document.getElementById('list');
 const countEl = document.getElementById('count');
 const emptyEl = document.getElementById('empty');
+const searchEl = document.getElementById('search');
 /* ---------- CSV ---------- */
 
 // Proper CSV parser: handles quoted fields, commas and newlines inside
@@ -99,6 +100,8 @@ const SORTERS = {
 function visible() {
   let out = state.all.slice();
 
+  const terms = state.query.toLowerCase().split(/\s+/).filter(Boolean);
+  if (terms.length) out = out.filter((c) => terms.every((t) => c.haystack.includes(t)));
   return out.sort(SORTERS[state.sort]);
 }
 
@@ -165,6 +168,10 @@ function update() {
 
 /* ---------- Controls ---------- */
 
+searchEl.addEventListener('input', () => {
+  state.query = searchEl.value;
+  update();
+});
 /* ---------- Boot ---------- */
 
 async function init() {
