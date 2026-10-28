@@ -19,6 +19,20 @@
       <input id="search" type="search" placeholder="Search name, ingredient, or note…" autocomplete="off">
     </div>
 
+    <div class="filters">
+      <div class="chips" id="spirit-chips" role="group" aria-label="Base spirit"></div>
+      <div class="row">
+        <label for="min-score">Min score <output id="min-score-out" for="min-score">0</output></label>
+        <input id="min-score" type="range" min="0" max="10" step="0.5" value="0">
+        <label for="sort">Sort</label>
+        <select id="sort">
+          <option value="score">Highest score</option>
+          <option value="newest">Newest</option>
+          <option value="name">A to Z</option>
+        </select>
+      </div>
+    </div>
+
     <div id="list" class="list"></div>
     <p id="empty" class="empty" hidden>Nothing matches. Loosen a filter.</p>
   </main>

@@ -14,6 +14,10 @@ const listEl = document.getElementById('list');
 const countEl = document.getElementById('count');
 const emptyEl = document.getElementById('empty');
 const searchEl = document.getElementById('search');
+const chipsEl = document.getElementById('spirit-chips');
+const minScoreEl = document.getElementById('min-score');
+const minScoreOut = document.getElementById('min-score-out');
+const sortEl = document.getElementById('sort');
 /* ---------- CSV ---------- */
 
 // Proper CSV parser: handles quoted fields, commas and newlines inside
@@ -102,6 +106,8 @@ function visible() {
 
   const terms = state.query.toLowerCase().split(/\s+/).filter(Boolean);
   if (terms.length) out = out.filter((c) => terms.every((t) => c.haystack.includes(t)));
+  if (state.spirit !== 'All') out = out.filter((c) => c.base === state.spirit);
+  if (state.minScore > 0) out = out.filter((c) => c.score !== null && c.score >= state.minScore);
   return out.sort(SORTERS[state.sort]);
 }
 
@@ -172,6 +178,46 @@ searchEl.addEventListener('input', () => {
   state.query = searchEl.value;
   update();
 });
+function syncChips() {
+  chipsEl.querySelectorAll('.chip').forEach((b) => {
+    b.setAttribute('aria-pressed', String(b.dataset.value === state.spirit));
+  });
+}
+
+function buildChips() {
+  const counts = new Map();
+  state.all.forEach((c) => counts.set(c.base, (counts.get(c.base) || 0) + 1));
+  const names = [...counts.keys()].sort((a, b) => counts.get(b) - counts.get(a) || a.localeCompare(b));
+
+  const make = (value, label) => {
+    const b = el('button', 'chip', label);
+    b.type = 'button';
+    b.dataset.value = value;
+    b.addEventListener('click', () => {
+      state.spirit = value;
+      syncChips();
+      update();
+    });
+    return b;
+  };
+
+  chipsEl.replaceChildren(
+    make('All', `All (${state.all.length})`),
+    ...names.map((n) => make(n, `${n} (${counts.get(n)})`)),
+  );
+  syncChips();
+}
+
+minScoreEl.addEventListener('input', () => {
+  state.minScore = parseFloat(minScoreEl.value);
+  minScoreOut.textContent = state.minScore.toFixed(1).replace(/\.0$/, '');
+  update();
+});
+
+sortEl.addEventListener('change', () => {
+  state.sort = sortEl.value;
+  update();
+});
 /* ---------- Boot ---------- */
 
 async function init() {
@@ -179,6 +225,7 @@ async function init() {
     const res = await fetch(CSV_PATH);
     if (!res.ok) throw new Error(`Couldn't load ${CSV_PATH} (HTTP ${res.status})`);
     state.all = toCocktails(parseCSV(await res.text()));
+    buildChips();
     update();
   } catch (err) {
     countEl.textContent = 'Something broke loading the list. Check data/cocktails.csv.';
