@@ -4,17 +4,12 @@ A searchable, scored cocktail collection. Static site, no build step, hosted on 
 
 ## How it works
 
-- `data/cocktails.csv` is the whole database. It's a straight export of the master Google Sheet.
-- `app.js` loads that file in the browser, parses it, and renders the cards.
-- `index.html` and `style.css` are the page and the look.
+- `index.html`, `style.css`, `app.js`, `api.js` are the whole site. No build step.
+- Until you connect it, the site shows sample data from `data/cocktails.csv`, read-only.
+- Once connected (Settings), it reads and writes your Google Sheet through a small Apps Script web app (`apps-script/Code.gs`). Add recipes, edit anything, change scores from the site. Edits made in the sheet show up on the site.
+- The web app URL and passcode live only in your browser. Your real data is never in this repo.
 
-Columns the site expects, in any order: `Cocktail`, `Score`, `Ingredients`, `Instructions`, `BK's Notes`, `Base Spirit`, `Source`, `Date Added`.
-
-## Updating the list
-
-1. In the Google Sheet: File > Download > Comma Separated Values (.csv).
-2. Create a branch, upload the file over `data/cocktails.csv`, open a pull request, merge.
-3. GitHub Pages republishes in about a minute.
+Setup guide: [docs/SETUP.md](docs/SETUP.md).
 
 ## Running it locally
 
@@ -28,4 +23,4 @@ Then open http://localhost:8000.
 
 ## Heads up
 
-This repo is public, so everything in the CSV is public, including scores and notes.
+This repo is public. The CSV in it is sample data only. Don't put your real list here; it belongs in the Google Sheet, behind the passcode.
