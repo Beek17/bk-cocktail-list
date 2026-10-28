@@ -1,0 +1,52 @@
+Cocktail,Score,Ingredients,Instructions,BK's Notes,Base Spirit,Source,Date Added
+Old Fashioned,8,"2 oz Bourbon
+0.25 oz Demerara Syrup
+2 dashes Angostura Bitters","Stir with ice, strain over a big cube. Express an orange peel.","Sample row. The template everything else riffs on.",Bourbon,Sample,10/20/2026
+Daiquiri,8.5,"2 oz White Rum
+1 oz Lime Juice
+0.75 oz Simple Syrup","Shake hard with ice, double strain into a chilled coupe.",Sample row. Balance test for any sour.,Rum,Sample,10/19/2026
+Paper Plane,9,"0.75 oz Bourbon
+0.75 oz Aperol
+0.75 oz Amaro Nonino
+0.75 oz Lemon Juice","Shake with ice, strain into a coupe.","Sample row. Equal parts, so ratio-tweaking is easy.",Bourbon,Sample,10/18/2026
+Last Word,7.5,"0.75 oz Gin
+0.75 oz Green Chartreuse
+0.75 oz Maraschino Liqueur
+0.75 oz Lime Juice","Shake with ice, double strain into a coupe. Cherry in the bottom.",Sample row.,Gin,Sample,10/15/2026
+Negroni,,"1 oz Gin
+1 oz Campari
+1 oz Sweet Vermouth","Stir with ice, strain over a big cube. Orange peel.","Sample row with a blank score, to test sorting. Also a comma, in the notes.",Gin,Sample,10/12/2026
+Penicillin,8.8,"2 oz Blended Scotch
+0.75 oz Lemon Juice
+0.75 oz Honey-Ginger Syrup
+0.25 oz Islay Scotch (float)","Shake the first three with ice, strain over a big cube. Float the Islay.","Sample row.",Whiskey,Sample,10/10/2026
+Naked and Famous,8.3,"0.75 oz Mezcal
+0.75 oz Aperol
+0.75 oz Yellow Chartreuse
+0.75 oz Lime Juice","Shake with ice, double strain into a coupe.",Sample row.,Mezcal,Sample,10/8/2026
+"The ""Usual"" Manhattan",8.2,"2 oz Rye Whiskey
+1 oz Sweet Vermouth
+2 dashes Angostura Bitters","Stir with ice, strain into a coupe. Cherry.","Sample row. The name has quotes in it, which is the point.",Whiskey,Sample,10/5/2026
+Espresso Martini,8,"1.5 oz Vodka
+1 oz Espresso
+0.5 oz Coffee Liqueur
+0.25 oz Simple Syrup","Shake hard with ice, double strain into a chilled coupe. Three beans.",Sample row.,Vodka,Sample,10/1/2026
+Jungle Bird,8.2,"1.5 oz Dark Rum
+0.75 oz Campari
+1.5 oz Pineapple Juice
+0.5 oz Lime Juice
+0.5 oz Simple Syrup","Shake with ice, strain over fresh ice.",Sample row.,Rum,Sample,9/28/2026
+Margarita,8,"2 oz Blanco Tequila
+1 oz Lime Juice
+0.5 oz Cointreau
+0.25 oz Agave Syrup","Shake with ice, strain over fresh ice in a salt-rimmed glass.",Sample row.,Tequila,Sample,9/25/2026
+Sidecar,8.1,"1.5 oz Cognac
+0.75 oz Cointreau
+0.75 oz Lemon Juice","Shake with ice, double strain into a sugar-rimmed coupe.",Sample row.,Cognac,Sample,9/20/2026
+Amaretto Sour,7.2,"1.5 oz Amaretto
+0.75 oz Bourbon
+1 oz Lemon Juice
+1 Egg White","Dry shake, then shake with ice. Strain into a rocks glass over a big cube.","Sample row. Cask-strength bourbon fixes the sweetness.",Liqueur,Sample,9/15/2026
+Boulevardier,8.4,"1.5 oz Bourbon
+1 oz Sweet Vermouth
+1 oz Campari","Stir with ice, strain over a big cube. Orange peel.",Sample row.,Whiskey,Sample,9/10/2026
